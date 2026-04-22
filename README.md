@@ -1,93 +1,207 @@
-# team-ai-coding-plugin
+# Team AI Coding Plugin
 
+> 团队专属 AI 编程规范插件 - BladeX 全栈开发 + Karpathy 心法 + Superpowers 工程化流程
 
+## 功能概述
 
-## Getting started
+本插件整合三大核心能力：
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+| 能力 | 说明 |
+|------|------|
+| **BladeX Skills** | 全栈开发工具链：代码生成、知识库、审计、对比、同步 |
+| **Karpathy Skills** | AI 编程底层心法：目标驱动、最小改动、先问后做、极简实现 |
+| **Superpowers** | 工程化流程护栏：头脑风暴、计划编写、TDD 执行 |
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+---
 
-## Add your files
+## Skills 列表
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+### BladeX 全栈开发
+
+| Skill | 用途 | 说明 |
+|-------|------|------|
+| `blade-design` | 全栈代码生成器 | 根据模块名、实体名、字段列表生成后端代码、前端页面、数据库建表语句 |
+| `blade-doc` | 框架知识库 | BladeX 框架全体系知识：OAuth2、SaaS 多租户、Secure 安全框架、MyBatis-Plus 等 |
+| `blade-commit` | Git 提交工具 | 基于 Gitmoji 规范生成提交信息，支持简单模式和详细模式 |
+| `blade-storm` | 头脑风暴 | 渐进式提问将模糊想法精炼为可落地方案 |
+| `blade-spec` | 规范驱动开发 | 复杂需求拆解为「需求分析 → 技术设计 → 任务拆解」三阶段 |
+| `blade-plan` | 轻量规划执行 | 中等需求快速拆解为「分析规划 → 逐任务执行 → 完成总结」 |
+| `blade-audit` | 代码审计 | 六维度审计：代码质量、架构合规、框架规范、安全漏洞、逻辑健壮性、性能隐患 |
+| `blade-compare` | 跨工程对比 | 对比两个 BladeX 工程差异，自动分离系统级与业务级差异 |
+| `blade-sync` | 跨工程同步 | 将源工程 Git 提交同步至目标工程，自动处理异构项目差异 |
+
+### Avue 前端组件
+
+| Skill | 用途 | 说明 |
+|-------|------|------|
+| `avue-design` | Avue 组件生成 | CRUD 表格、表单、树组件、数据展示等全部 Avue 组件代码生成 |
+
+### Karpathy 底层心法
+
+| Skill | 规则 | 触发方式 |
+|-------|------|----------|
+| `goal-driven` | 只给成功标准，不指定实现步骤 | 自动/手动 |
+| `minimal-changes` | 只修改目标相关代码 | 自动 |
+| `ask-first` | 模糊需求必须确认 | 自动/手动 |
+| `keep-simple` | 优先最简单可维护方案 | 自动/手动 |
+
+### Superpowers 工程化流程
+
+| Skill | 用途 | 触发方式 |
+|-------|------|----------|
+| `brainstorm` | 需求澄清与设计探索 | 手动 `/brainstorm` |
+| `write-plan` | 编写实现计划 | 手动 `/write-plan` |
+| `execute-plan` | 执行实现计划 | 手动 `/execute-plan` |
+| `tdd` | 测试驱动开发 | 自动 |
+
+---
+
+## 团队自定义命令
+
+| 命令 | 功能 | 用法 |
+|------|------|------|
+| `/code-review` | 多维度代码审查 | `/code-review [文件路径]` |
+| `/deploy` | 标准化部署流程 | `/deploy [环境]` |
+| `/sprint-start` | 迭代启动初始化 | `/sprint-start [迭代名称]` |
+
+---
+
+## 强制门禁（Hooks）
+
+| Hook | 功能 |
+|------|------|
+| `pre-tool-use.sh` | 工具调用前校验：禁止修改非目标文件、禁止高危命令 |
+| `pre-commit.sh` | 提交前门禁：必须通过测试、代码审查、安全扫描 |
+| `security-check.sh` | 安全扫描：SQL 注入、XSS、敏感信息检测 |
+
+---
+
+## 安装方法
+
+### 方式一：从 Git 仓库安装
+
+```bash
+/plugin install http://192.168.30.204:9980/zhengyp/team-ai-coding-plugin.git
+```
+
+### 方式二：本地安装
+
+将插件目录放置到 Claude Code 的插件目录：
 
 ```
-cd existing_repo
-git remote add origin http://192.168.30.204:9980/zhengyp/team-ai-coding-plugin.git
-git branch -M main
-git push -uf origin main
+~/.claude/plugins/team-ai-coding-plugin/
 ```
 
-## Integrate with your tools
+---
 
-- [ ] [Set up project integrations](http://192.168.30.204:9980/zhengyp/team-ai-coding-plugin/-/settings/integrations)
+## 使用方法
 
-## Collaborate with your team
+### 标准开发流程
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+```bash
+# 1. 需求澄清
+/blade-storm 需求：实现用户登录功能
 
-## Test and Deploy
+# 2. 代码生成
+/blade-design 模块：user，实体：User，字段：username, password, email
 
-Use the built-in continuous integration in GitLab.
+# 3. 知识查询
+/blade-doc 查询 OAuth2 认证流程
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+# 4. 代码审计
+/blade-audit 审计 src/main/java 目录
 
-***
+# 5. 提交代码
+/blade-commit
+```
 
-# Editing this README
+### 跨工程同步流程
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+```bash
+# 1. 对比工程差异
+/blade-compare 源工程路径 目标工程路径
 
-## Suggestions for a good README
+# 2. 同步提交记录
+/blade-sync 源工程路径 目标工程路径 --adapt
+```
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+---
 
-## Name
-Choose a self-explaining name for your project.
+## 目录结构
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+```
+team-ai-coding-plugin/
+├── .claude-plugin/
+│   └── plugin.json              # 插件元信息
+├── skills/
+│   ├── blade-design/            # 全栈代码生成
+│   ├── blade-doc/               # 框架知识库
+│   ├── blade-commit/            # Git 提交
+│   ├── blade-storm/             # 头脑风暴
+│   ├── blade-spec/              # 规范驱动开发
+│   ├── blade-plan/              # 轻量规划
+│   ├── blade-audit/             # 代码审计
+│   ├── blade-compare/           # 跨工程对比
+│   ├── blade-sync/              # 跨工程同步
+│   ├── avue-design/             # Avue 组件生成
+│   ├── karpathy-team/           # Karpathy 心法
+│   └── superpowers-team/        # Superpowers 流程
+├── hooks/
+│   ├── pre-tool-use.sh          # 工具调用前校验
+│   ├── pre-commit.sh            # 提交前门禁
+│   └── security-check.sh        # 安全扫描
+├── commands/
+│   ├── code-review.md           # 代码审查命令
+│   ├── deploy.md                # 部署命令
+│   └── sprint-start.md          # 迭代启动命令
+├── templates/
+│   ├── frontend/                # 前端模板
+│   ├── backend/                 # 后端模板
+│   └── mobile/                  # 移动端模板
+├── CLAUDE.md                    # 团队统一规范
+└── README.md                    # 本文档
+```
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+---
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+## 更新方法
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+```bash
+/plugin update team-ai-coding-plugin
+```
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+---
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+## 版本历史
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+### v1.0.0 (2026-04-22)
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+- 集成 BladeX 全栈开发 Skills（9 个）
+- 集成 Avue 组件生成 Skill
+- 集成 Karpathy Skills 4 条核心原则
+- 集成 Superpowers 标准 7 步工作流
+- 添加强制门禁（PreToolUse、PreCommit、SecurityCheck）
+- 添加团队自定义命令（code-review、deploy、sprint-start）
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+---
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+## 常见问题
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+### Q: 如何临时禁用某个门禁？
 
-## License
-For open source projects, say how it is licensed.
+A: 不建议禁用门禁。如确需临时绕过，可在命令前添加 `--no-verify` 参数（需管理员权限）。
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+### Q: 如何添加团队自定义技能？
+
+A: 在 `skills/` 目录下创建新的技能文件，并在 `plugin.json` 中注册。
+
+### Q: 如何修改代码规范？
+
+A: 编辑 `CLAUDE.md` 文件，所有团队成员更新插件后自动生效。
+
+---
+
+**维护团队**：Team AI
+**版本**：v1.0.0
+**更新日期**：2026-04-22
+**仓库地址**：http://192.168.30.204:9980/zhengyp/team-ai-coding-plugin.git
