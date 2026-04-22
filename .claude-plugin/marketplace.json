@@ -1,0 +1,30 @@
+{
+  "name": "team-ai-coding-plugin",
+  "id": "team-ai-coding-plugin",
+  "owner": {
+    "name": "Team AI"
+  },
+  "metadata": {
+    "description": "团队专属 AI 编程规范插件 - BladeX 全栈开发 + Karpathy 心法 + Superpowers 工程化流程",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "team-ai-coding-plugin",
+      "source": "./",
+      "description": "BladeX 全栈开发工具链：代码生成、知识库、审计、对比、同步",
+      "version": "1.0.0",
+      "author": {
+        "name": "Team AI"
+      },
+      "keywords": [
+        "bladex",
+        "fullstack",
+        "code-generation",
+        "audit",
+        "team"
+      ],
+      "category": "workflow"
+    }
+  ]
+}
