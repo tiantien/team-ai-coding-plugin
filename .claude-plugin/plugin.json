@@ -1,0 +1,61 @@
+{
+  "name": "team-ai-coding-plugin",
+  "version": "1.0.0",
+  "description": "团队专属 AI 编程规范插件 - 融合 Karpathy Skills 底层心法与 Superpowers 工程化流程",
+  "author": "Team AI",
+  "repository": "内部 GitLab 地址",
+  "skills": [
+    "skills/karpathy-team/goal-driven",
+    "skills/karpathy-team/minimal-changes",
+    "skills/karpathy-team/ask-first",
+    "skills/karpathy-team/keep-simple",
+    "skills/superpowers-team/brainstorm",
+    "skills/superpowers-team/write-plan",
+    "skills/superpowers-team/execute-plan",
+    "skills/superpowers-team/tdd"
+  ],
+  "hooks": [
+    "hooks/pre-tool-use.sh",
+    "hooks/pre-commit.sh",
+    "hooks/security-check.sh"
+  ],
+  "commands": [
+    "commands/code-review",
+    "commands/deploy",
+    "commands/sprint-start"
+  ],
+  "triggers": {
+    "goal-driven": {
+      "type": "auto",
+      "when": "user requests development task"
+    },
+    "minimal-changes": {
+      "type": "auto",
+      "when": "code edit or refactor"
+    },
+    "ask-first": {
+      "type": "auto",
+      "when": "ambiguous or unclear requirements"
+    },
+    "keep-simple": {
+      "type": "auto",
+      "when": "architecture design or code implementation"
+    },
+    "brainstorm": {
+      "type": "manual",
+      "command": "/brainstorm"
+    },
+    "write-plan": {
+      "type": "manual",
+      "command": "/write-plan"
+    },
+    "execute-plan": {
+      "type": "manual",
+      "command": "/execute-plan"
+    },
+    "tdd": {
+      "type": "auto",
+      "when": "writing implementation code"
+    }
+  }
+}
