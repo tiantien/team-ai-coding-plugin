@@ -1,37 +1,17 @@
 {
   "name": "team-ai-coding-plugin",
-  "version": "1.0.0",
   "description": "团队专属 AI 编程规范插件 - BladeX 全栈开发 + Karpathy 心法 + Superpowers 工程化流程",
-  "author": "Team AI",
-  "repository": "http://192.168.30.204:9980/zhengyp/team-ai-coding-plugin.git",
-  "skills": [
-    "skills/blade-design",
-    "skills/blade-doc",
-    "skills/blade-commit",
-    "skills/blade-storm",
-    "skills/blade-spec",
-    "skills/blade-plan",
-    "skills/blade-audit",
-    "skills/blade-compare",
-    "skills/blade-sync",
-    "skills/avue-design",
-    "skills/karpathy-team/goal-driven",
-    "skills/karpathy-team/minimal-changes",
-    "skills/karpathy-team/ask-first",
-    "skills/karpathy-team/keep-simple",
-    "skills/superpowers-team/brainstorm",
-    "skills/superpowers-team/write-plan",
-    "skills/superpowers-team/execute-plan",
-    "skills/superpowers-team/tdd"
-  ],
-  "hooks": [
-    "hooks/pre-tool-use.sh",
-    "hooks/pre-commit.sh",
-    "hooks/security-check.sh"
-  ],
-  "commands": [
-    "commands/code-review",
-    "commands/deploy",
-    "commands/sprint-start"
+  "version": "1.0.0",
+  "author": {
+    "name": "Team AI"
+  },
+  "repository": "https://github.com/tiantien/team-ai-coding-plugin",
+  "license": "MIT",
+  "keywords": [
+    "bladex",
+    "fullstack",
+    "code-generation",
+    "audit",
+    "team"
   ]
 }
