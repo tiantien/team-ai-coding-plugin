@@ -78,18 +78,17 @@
 
 ## 安装方法
 
-### 方式一：从 Git 仓库安装
+### 方式一：从 GitHub 安装（推荐）
 
 ```bash
-/plugin install http://192.168.30.204:9980/zhengyp/team-ai-coding-plugin.git
+/plugin install github:tiantien/team-ai-coding-plugin
 ```
 
-### 方式二：本地安装
+### 方式二：从 GitLab 安装（内部网络）
 
-将插件目录放置到 Claude Code 的插件目录：
-
-```
-~/.claude/plugins/team-ai-coding-plugin/
+```bash
+# 需要先添加 GitLab 为自定义 marketplace
+# 目前 Claude Code 仅支持 GitHub 作为 marketplace source
 ```
 
 ---
@@ -204,4 +203,5 @@ A: 编辑 `CLAUDE.md` 文件，所有团队成员更新插件后自动生效。
 **维护团队**：Team AI
 **版本**：v1.0.0
 **更新日期**：2026-04-22
-**仓库地址**：http://192.168.30.204:9980/zhengyp/team-ai-coding-plugin.git
+**GitHub**：https://github.com/tiantien/team-ai-coding-plugin
+**GitLab**：http://192.168.30.204:9980/zhengyp/team-ai-coding-plugin.git
